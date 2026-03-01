@@ -5,6 +5,8 @@
     const total = document.getElementById("total");
     const guardarCostosBtn = document.getElementById("guardar-costos");
 
+    const litros = document.getElementById("litros");
+
     document.querySelectorAll(".costes input").forEach(input => {
         input.addEventListener("input", calcular);
     });
@@ -17,6 +19,8 @@
         });
 
         total.value = totalCosto.toFixed(2);
+
+        const litros = parseFloat();
     }
 
     // Cargar costos guardados al iniciar

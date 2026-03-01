@@ -161,3 +161,101 @@ footer {
     color: #888;
     font-size: 0.9rem;
 }
+
+
+/* ========== VENTAS y PRODUCCION ========== */
+.ventas, .produccion {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  color: #3e2723;
+}
+
+.ventas h4,
+.produccion h4 {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  border-bottom: 2px solid #d7ccc8;
+  padding-bottom: 10px;
+  color: #5d4037;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.control-wrapper {
+  flex: 1 1 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.ventas label,
+.produccion label {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #8d6e63;
+}
+
+.ventas input,
+.produccion input {
+  width: 60px;
+  padding: 12px;
+  border: 1px solid #d7ccc8;
+  border-radius: 8px;
+  background-color: #fdfaf6;
+  font-size: 1rem;
+  text-align: right;
+  color: #3e2723;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.ventas input:focus,
+.produccion input:focus {
+  border-color: #5d4037;
+  box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.1);
+  background-color: #fff;
+}
+
+/* ========== Resultados ========== */
+.resultados {
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 300px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  color: #3e2723;
+}
+
+.resultados h4 {
+  font-size: 1.25rem;
+  border-bottom: 2px solid #2ac931;
+  padding-bottom: 10px;
+  color: #2ac931;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resultados .control-wrapper {
+    margin-bottom: 6px;
+}
+
+.resultados .control-wrapper:last-child {
+    margin-bottom: 0;
+}

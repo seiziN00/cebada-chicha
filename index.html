@@ -129,32 +129,58 @@
 
       <div class="produccion">
         <h4>Producción</h4>
-        <label>Litros producidos por lote</label>
-        <input id="litros-lote" type="number" placeholder="15">
+        <p style="margin: 16px; text-align: center;">Litros producidos por lote</p>
+        <div class="grid-container">
+          <div class="control-wrapper">
+            <label>Cebada</label>
+            <input id="litros-lote-cebada" type="number" placeholder="0">
+          </div>
+
+          <div class="control-wrapper">
+            <label>Chicha morada</label>
+            <input id="litros-lote-chicha" type="number" placeholder="0">
+          </div>
+        </div>
       </div>
 
       
       <div class="ventas">
         <h4>Precio de venta</h4>
-        <label>Cebada (S/ por litro)</label>
-        <input id="precio-cebada" type="number" value="4">
+        
+        <div class="grid-container">
+          <div class="control-wrapper">
+            <label for="precio-cebada">Cebada (S/ por litro)</label>
+            <input id="precio-cebada" type="number" value="4.00" step="0.10">
+          </div>
 
-        <label>Chicha morada (S/ por litro)</label>
-        <input id="precio-chicha" type="number" value="5">
+          <div class="control-wrapper">
+            <label for="precio-chicha">Chicha (S/ por litro)</label>
+            <input id="precio-chicha" type="number" value="5.00" step="0.10">
+          </div>
+        </div>
       </div>
 
 
       <div class="resultados">
         <h4>Resultados</h4>
 
-        <label>Costo por litro</label>
-        <input id="costo-litro" disabled>
+        <div class="resultados_container">
+          <div class="control-wrapper">
+            <label>Costo por litro</label>
+            <input id="costo-litro" type="number" disabled>
+          </div>
 
-        <label>Ingreso estimado por lote</label>
-        <input id="ingreso-lote" disabled>
+          <div class="control-wrapper">
+            <label>Ingreso estimado por lote</label>
+            <input id="ingreso-lote" type="number" disabled>
+          </div>
 
-        <label>Ganancia por lote</label>
-        <input id="ganancia" disabled>
+          <div class="control-wrapper">
+            <label>Ganancia por lote</label>
+            <input id="ganancia" type="number" disabled>
+          </div>
+
+        </div>
       </div>
     
     </div>
