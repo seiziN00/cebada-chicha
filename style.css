@@ -1,0 +1,136 @@
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+p {
+    margin-left: 1rem;
+    font-family: Verdana, sans-serif;
+}
+
+.contenedor-calculadoras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* -------- Card -------- */
+.costes {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    width: 320px;
+    border-top: 5px solid #0f9;
+}
+
+.chicha-morada {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    width: 320px;
+    border-top: 5px solid #4b0082; /* Color Chicha */
+}
+
+.cebada {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    width: 320px;
+    border-top: 5px solid #c79237; /* Color Cebada */
+}
+
+/* Título */
+h4 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.costes-title {
+    color: #0f9;
+}
+
+.chicha-morada-title {
+    color: #4b0082;
+}
+
+.cebada-title {
+    color: #c79237;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    text-align: left;
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    padding: 8px 0;
+}
+
+td {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #4b0082;
+    background-color: #f9f0ff;
+}
+
+th:nth-child(2) {
+    text-align: right;
+    padding-right: 12px;
+}
+
+td:nth-child(2) {
+    text-align: right;
+}
+
+input[type="number"] {
+    display: inline-block;
+    margin: 0; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+    font-size: 0.9rem;
+}

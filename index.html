@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi plantilla</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenido(a)</h1>
+      <p>
+        <b>PRECIO COSTE:</b> coste de la inversión.<br>
+        <b>CANTIDAD:</b> cantidad estimada para el producto.
+      </p>
+    </header>
+
+    <div class="contenedor-calculadoras">
+      <div class="costes">
+        <h4 class="costes-title">Definición de costes</h4>
+        <table>
+          <tr>
+            <th>Insumos y gas</th>
+            <th>Precio coste</th>
+          </tr>
+          <tr>
+            <td>Azúcar</td>
+            <td><input id="azucar" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Cebada</td>
+            <td><input id="cebada" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Maíz morado</td>
+            <td><input id="maiz-morado" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Linaza</td>
+            <td><input id="linaza" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Limón</td>
+            <td><input id="limon" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Gas</td>
+            <td><input id="gas" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td><input id="total" type="number" placeholder="0" disabled></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="cebada">
+        <h4 class="cebada-title">Cebada</h4>
+        <table>
+          <tr>
+            <th>Insumos / gas</th>
+            <th>Cantidad</th>
+          </tr>
+          <tr>
+            <td>Azúcar</td>
+            <td><input id="cebada-azucar" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Cebada</td>
+            <td><input id="cebada-cebada" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Linaza</td>
+            <td><input id="cebada-linaza" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Limón</td>
+            <td><input id="cebada-limon" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td>Gas (tiempo)</td>
+            <td><input id="cebada-gas" type="number" placeholder="0"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="chicha-morada">
+        <h4 class="chicha-morada-title">Chicha morada</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Insumo / gas</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Azúcar</td>
+              <td><input type="number" placeholder="0"></td>
+            </tr>
+            <tr>
+              <td>Maíz morado</td>
+              <td><input type="number" placeholder="0"></td>
+            </tr>
+            <tr>
+              <td>Limón</td>
+              <td><input type="number" placeholder="0"></td>
+            </tr>
+            <tr>
+              <td>Gas (minutos)</td>
+              <td><input type="number" placeholder="0"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <small>Derechos reservados a Luis Felipe Tello Arteaga &copy; 2026</small>
+    </footer>
+    <script src="costos.js"></script>
+  </body>
+</html>
+
