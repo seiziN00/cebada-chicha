@@ -14,6 +14,22 @@ p {
     font-family: Verdana, sans-serif;
 }
 
+#guardar-costos {
+    width: 100%;
+    padding: 6px 9px;
+    background-color: #09f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#guardar-costos:hover {
+    background-color: #007acc;
+}
+
 .contenedor-calculadoras {
     display: flex;
     flex-wrap: wrap;
@@ -27,8 +43,9 @@ p {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 24px;
+    padding-bottom: 16px;
     width: 320px;
-    border-top: 5px solid #0f9;
+    border-top: 5px solid #09f;
 }
 
 .chicha-morada {
@@ -52,16 +69,17 @@ p {
 /* Título */
 h4 {
     margin-top: 0;
+    margin-bottom: 20px;
     font-size: 1.4rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 10px;
+    padding-bottom: 16px;
 }
 
 .costes-title {
-    color: #0f9;
+    color: #09f;
 }
 
 .chicha-morada-title {
@@ -76,7 +94,6 @@ h4 {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
 }
 
 th {
@@ -108,9 +125,19 @@ input[type="number"] {
     transition: border-color 0.3s;
 }
 
-input[type="number"]:focus {
+.chicha-morada input[type="number"]:focus {
     border-color: #4b0082;
     background-color: #f9f0ff;
+}
+
+.cebada input[type="number"]:focus {
+    border-color: #c79237;
+    background-color: #fef5e6;
+}
+
+.costes input[type="number"]:focus {
+    border-color: #09f;
+    background-color: #f0f8ff;
 }
 
 th:nth-child(2) {

@@ -10,7 +10,7 @@
     <header>
       <h1>Bienvenido(a)</h1>
       <p>
-        <b>PRECIO COSTE:</b> coste de la inversión.<br>
+        <b>PRECIO COSTE:</b> coste del insumo.<br>
         <b>CANTIDAD:</b> cantidad estimada para el producto.
       </p>
     </header>
@@ -21,35 +21,40 @@
         <table>
           <tr>
             <th>Insumos y gas</th>
-            <th>Precio coste</th>
+            <th style="padding-right: 22px;">Precio</th>
           </tr>
           <tr>
-            <td>Azúcar</td>
+            <td>Azúcar <small>(1kg)</small></td>
             <td><input id="azucar" type="number" placeholder="0"></td>
           </tr>
           <tr>
-            <td>Cebada</td>
+            <td>Cebada <small>(1kg)</small></td>
             <td><input id="cebada" type="number" placeholder="0"></td>
           </tr>
           <tr>
-            <td>Maíz morado</td>
+            <td>Maíz morado <small>(1kg)</small></td>
             <td><input id="maiz-morado" type="number" placeholder="0"></td>
           </tr>
           <tr>
-            <td>Linaza</td>
+            <td>Linaza <small>(1kg)</small></td>
             <td><input id="linaza" type="number" placeholder="0"></td>
           </tr>
           <tr>
-            <td>Limón</td>
+            <td>Limón <small>(ciento)</small></td>
             <td><input id="limon" type="number" placeholder="0"></td>
           </tr>
           <tr>
-            <td>Gas</td>
+            <td>Gas <small>(de referencia)</small></td>
             <td><input id="gas" type="number" placeholder="0"></td>
           </tr>
           <tr>
-            <td>Total</td>
+            <td>Total <small>(sin contar gas)</small></td>
             <td><input id="total" type="number" placeholder="0" disabled></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button id="guardar-costos">Guardar preferencias</button>
+            </td>
           </tr>
         </table>
       </div>
@@ -78,8 +83,12 @@
             <td><input id="cebada-limon" type="number" placeholder="0"></td>
           </tr>
           <tr>
-            <td>Gas (tiempo)</td>
+            <td>Gas (minutos)</td>
             <td><input id="cebada-gas" type="number" placeholder="0"></td>
+          </tr>
+          <tr>
+            <td><b>Coste producción por lote</b></td>
+            <td><input id="cebada-total" type="number" placeholder="0" disabled></td>
           </tr>
         </table>
       </div>
@@ -93,31 +102,70 @@
               <th>Cantidad</th>
             </tr>
           </thead>
-          <tbody>
+        <tbody>
             <tr>
               <td>Azúcar</td>
-              <td><input type="number" placeholder="0"></td>
+              <td><input id="chicha-morada-azucar" type="number" placeholder="0"></td>
             </tr>
             <tr>
               <td>Maíz morado</td>
-              <td><input type="number" placeholder="0"></td>
+              <td><input id="chicha-morada-maiz" type="number" placeholder="0"></td>
             </tr>
             <tr>
               <td>Limón</td>
-              <td><input type="number" placeholder="0"></td>
+              <td><input id="chicha-morada-limon" type="number" placeholder="0"></td>
             </tr>
             <tr>
               <td>Gas (minutos)</td>
-              <td><input type="number" placeholder="0"></td>
+              <td><input id="chicha-morada-gas" type="number" placeholder="0"></td>
             </tr>
+            <tr>
+              <td>Total</td>
+              <td><input id="chicha-morada-total" type="number" placeholder="0" disabled></td>
           </tbody>
         </table>
       </div>
+
+
+      <div class="produccion">
+        <h4>Producción</h4>
+        <label>Litros producidos por lote</label>
+        <input id="litros-lote" type="number" placeholder="15">
+      </div>
+
+      
+      <div class="ventas">
+        <h4>Precio de venta</h4>
+        <label>Cebada (S/ por litro)</label>
+        <input id="precio-cebada" type="number" value="4">
+
+        <label>Chicha morada (S/ por litro)</label>
+        <input id="precio-chicha" type="number" value="5">
+      </div>
+
+
+      <div class="resultados">
+        <h4>Resultados</h4>
+
+        <label>Costo por litro</label>
+        <input id="costo-litro" disabled>
+
+        <label>Ingreso estimado por lote</label>
+        <input id="ingreso-lote" disabled>
+
+        <label>Ganancia por lote</label>
+        <input id="ganancia" disabled>
+      </div>
+    
     </div>
+    
     <footer>
       <small>Derechos reservados a Luis Felipe Tello Arteaga &copy; 2026</small>
     </footer>
+    
     <script src="costos.js"></script>
+    <script src="cebada.js"></script>
+    <script src="chicha-morada.js"></script>
   </body>
 </html>
 
