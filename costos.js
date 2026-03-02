@@ -32,7 +32,7 @@
         document.getElementById("linaza").value = costosGuardados.linaza || 0;
         document.getElementById("limon").value = costosGuardados.limon || 0;
         document.getElementById("pineapple").value = costosGuardados.pina || 0;
-        document.getElementById("canela").value = costosGuardados.canela || 0;
+        //document.getElementById("canela").value = costosGuardados.canela || 0;
         document.getElementById("leche").value = costosGuardados.leche || 0;
         document.getElementById("fresa").value = costosGuardados.fresa || 0;
         document.getElementById("lucuma").value = costosGuardados.lucuma || 0;
@@ -56,7 +56,7 @@
             linaza: parseFloat(document.getElementById("linaza").value) || 0,
             limon: parseFloat(document.getElementById("limon").value) || 0,
             pina: parseFloat(document.getElementById("pineapple").value) || 0,
-            canela: parseFloat(document.getElementById("canela").value) || 0,
+            //canela: parseFloat(document.getElementById("canela").value) || 0,
             leche: parseFloat(document.getElementById("leche").value) || 0,
             fresa: parseFloat(document.getElementById("fresa").value) || 0,
             lucuma: parseFloat(document.getElementById("lucuma").value) || 0,

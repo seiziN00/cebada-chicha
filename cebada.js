@@ -3,20 +3,14 @@
   const cebada = document.getElementById("cebada-cebada");
   const linaza = document.getElementById("cebada-linaza");
   const limon = document.getElementById("cebada-limon");
-  const gas = document.getElementById("cebada-gas");
   const total = document.getElementById("cebada-total");
 
   const costosGuardados = JSON.parse(localStorage.getItem("costos"));
   console.log("Costos guardados:", costosGuardados);
 
-  [azucar, cebada, linaza, limon, gas].forEach(input => {
+  [azucar, cebada, linaza, limon].forEach(input => {
     input.addEventListener("input", calcular);
   });
-
-  function calcularGas(tiempo, precio = 50) {
-    const minutos = 6000;
-    return (parseFloat(tiempo) || 0) * (parseFloat(precio) || 0) / minutos;
-  }
 
   function calcularAzucar(cantidad, precio = 3) {
     return (parseFloat(cantidad) || 0) * (parseFloat(precio) || 0);
@@ -41,7 +35,6 @@
     totalCosto += calcularCebada(cebada.value, costosGuardados.cebada) || 0;
     totalCosto += calcularLinaza(linaza.value, costosGuardados.linaza) || 0;
     totalCosto += calcularLimon(limon.value, costosGuardados.limon) || 0;
-    totalCosto += calcularGas(gas.value, costosGuardados.gas) || 0;
 
     total.value = totalCosto.toFixed(2);
   }
