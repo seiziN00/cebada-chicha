@@ -1,269 +1,489 @@
+/* ============================================================
+   CSS Custom Properties (Design Tokens)
+   ============================================================ */
+
+:root {
+  /* Brand colours */
+  --color-cebada: #c79237;
+  --color-cebada-light: #fef5e6;
+  --color-chicha: #4b0082;
+  --color-chicha-light: #f9f0ff;
+  --color-costes: #0099ff;
+  --color-costes-light: #f0f8ff;
+  --color-resultados: #2ac931;
+  --color-produccion: #5d4037;
+  --color-ventas: #5d4037;
+
+  /* Light theme (default) */
+  --bg-body: #f4f7f6;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-muted: #888888;
+  --border-color: #e0e0e0;
+  --border-light: #f0f0f0;
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+  --btn-primary-bg: var(--color-costes);
+  --btn-primary-hover: #007acc;
+}
+
+[data-theme="dark"] {
+  --bg-body: #1a1a2e;
+  --bg-card: #16213e;
+  --bg-input: #0f3460;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #808080;
+  --border-color: #2a2a4a;
+  --border-light: #2a2a4a;
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 25px rgba(0, 0, 0, 0.4);
+  --btn-primary-bg: #1a8cff;
+  --btn-primary-hover: #0066cc;
+
+  /* Brighter brand colours for dark-mode contrast */
+  --color-cebada: #e8a940;
+  --color-cebada-light: #3a2a10;
+  --color-chicha: #BC13FE;
+  --color-chicha-light: #2a1040;
+  --color-costes: #4db8ff;
+  --color-costes-light: #0a2a4a;
+  --color-resultados: #3deb45;
+  --color-produccion: #bcaaa4;
+  --color-ventas: #bcaaa4;
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    padding: 20px;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  padding: 20px;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1 {
-    margin-top: 0;
+/* ============================================================
+   Header
+   ============================================================ */
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border-light);
 }
 
-p {
-    margin-left: 1rem;
-    font-family: Verdana, sans-serif;
-}
-
-#guardar-costos {
-    width: 100%;
-    padding: 6px 9px;
-    background-color: #09f;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#guardar-costos:hover {
-    background-color: #007acc;
-}
-
-.contenedor-calculadoras {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* -------- Card -------- */
-.costes {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-    padding-bottom: 16px;
-    width: 320px;
-    border-top: 5px solid #09f;
-}
-
-.chicha-morada {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-    width: 320px;
-    border-top: 5px solid #4b0082; /* Color Chicha */
-}
-
-.cebada {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-    width: 320px;
-    border-top: 5px solid #c79237; /* Color Cebada */
-}
-
-/* Título */
-h4 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.4rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 16px;
-}
-
-.costes-title {
-    color: #09f;
-}
-
-.chicha-morada-title {
-    color: #4b0082;
-}
-
-.cebada-title {
-    color: #c79237;
-}
-
-/* Tabla */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th {
-    text-align: left;
-    font-size: 0.85rem;
-    color: #888;
-    text-transform: uppercase;
-    padding: 8px 0;
-}
-
-td {
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
-}
-
-table tr:last-child td {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-input[type="number"] {
-    width: 70px;
-    padding: 8px;
-    border: 2px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 1rem;
-    text-align: center;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.chicha-morada input[type="number"]:focus {
-    border-color: #4b0082;
-    background-color: #f9f0ff;
-}
-
-.cebada input[type="number"]:focus {
-    border-color: #c79237;
-    background-color: #fef5e6;
-}
-
-.costes input[type="number"]:focus {
-    border-color: #09f;
-    background-color: #f0f8ff;
-}
-
-th:nth-child(2) {
-    text-align: right;
-    padding-right: 12px;
-}
-
-td:nth-child(2) {
-    text-align: right;
-}
-
-input[type="number"] {
-    display: inline-block;
-    margin: 0; 
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #888;
-    font-size: 0.9rem;
-}
-
-
-/* ========== VENTAS y PRODUCCION ========== */
-.ventas, .produccion {
-  font-family: 'Segoe UI', sans-serif;
-  max-width: 300px;
-  margin: 20px auto;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  color: #3e2723;
-}
-
-.ventas h4,
-.produccion h4 {
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 20px;
-  font-size: 1.25rem;
-  border-bottom: 2px solid #d7ccc8;
-  padding-bottom: 10px;
-  color: #5d4037;
-  text-transform: uppercase;
+.header__title {
+  font-size: 2rem;
   letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--color-cebada), var(--color-chicha));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.grid-container {
+.header__description {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   Theme Toggle Button
+   ============================================================ */
+
+.btn-theme {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  background: var(--bg-card);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-theme:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-theme:active {
+  transform: scale(0.95);
+}
+
+/* ============================================================
+   Calculator Grid (Main Layout)
+   ============================================================ */
+
+.calculator-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.control-wrapper {
-  flex: 1 1 250px;
+/* ============================================================
+   Card (shared)
+   ============================================================ */
+
+.card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  width: 340px;
+  border-top: 5px solid transparent;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+/* Card variants */
+.card--costes  { border-top-color: var(--color-costes); }
+.card--cebada  { border-top-color: var(--color-cebada); }
+.card--chicha  { border-top-color: var(--color-chicha); }
+.card--resultados { border-top-color: var(--color-resultados); }
+
+.card--produccion,
+.card--ventas {
+  border-top-color: var(--color-produccion);
+}
+
+/* ============================================================
+   Card Title
+   ============================================================ */
+
+.card__title {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border-light);
+  position: relative;
+}
+
+/* Decorative underline via pseudo-element */
+.card__title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+.card__title--costes      { color: var(--color-costes); }
+.card__title--cebada      { color: var(--color-cebada); }
+.card__title--chicha       { color: var(--color-chicha); }
+.card__title--resultados  { color: var(--color-resultados); }
+
+.card__title--produccion,
+.card__title--ventas {
+  color: var(--color-produccion);
+}
+
+
+
+/* ============================================================
+   Card Subtitle
+   ============================================================ */
+
+.card__subtitle {
+  text-align: center;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   Tables
+   ============================================================ */
+
+.card__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card__table th {
+  text-align: left;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 0;
+}
+
+.card__table th:nth-child(2) {
+  text-align: right;
+  padding-right: 12px;
+}
+
+.card__table td {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.card__table td:nth-child(2) {
+  text-align: right;
+}
+
+.card__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Total row highlight */
+.card__table-total td {
+  border-top: 2px solid var(--border-color);
+  padding-top: 14px;
+}
+
+/* Results table */
+.card__table--resultados {
+  border-collapse: separate;
+  border-spacing: 6px;
+}
+
+.card__table--resultados th {
+  padding: 4px 8px;
+}
+
+.card__table--resultados td:nth-child(n+2) {
+  text-align: right;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ============================================================
+   Inputs
+   ============================================================ */
+
+input[type="number"] {
+  width: 80px;
+  padding: 8px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:focus {
+  box-shadow: 0 0 0 3px rgba(0, 153, 255, 0.15);
+}
+
+input[type="number"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  font-weight: 700;
+}
+
+/* Contextual focus colours */
+.card--costes input[type="number"]:focus {
+  border-color: var(--color-costes);
+  background-color: var(--color-costes-light);
+}
+
+.card--cebada input[type="number"]:focus {
+  border-color: var(--color-cebada);
+  background-color: var(--color-cebada-light);
+}
+
+.card--chicha input[type="number"]:focus {
+  border-color: var(--color-chicha);
+  background-color: var(--color-chicha-light);
+}
+
+/* ============================================================
+   Field Group (Producción & Ventas)
+   ============================================================ */
+
+.field-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.field {
+  flex: 1 1 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 12px;
 }
 
-.ventas label,
-.produccion label {
-  font-size: 1.1rem;
-  margin-bottom: 4px;
+.field label {
+  font-size: 1rem;
   font-weight: 600;
   white-space: nowrap;
-  color: #8d6e63;
+  color: var(--text-secondary);
 }
 
-.ventas input,
-.produccion input {
-  width: 60px;
-  padding: 12px;
-  border: 1px solid #d7ccc8;
+.card--produccion input[type="number"],
+.card--ventas input[type="number"] {
+  width: 70px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  background-color: #fdfaf6;
-  font-size: 1rem;
+  background-color: var(--bg-input);
   text-align: right;
-  color: #3e2723;
-  transition: all 0.3s ease;
-  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ventas input:focus,
-.produccion input:focus {
-  border-color: #5d4037;
-  box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.1);
-  background-color: #fff;
+.card--produccion input[type="number"]:focus,
+.card--ventas input[type="number"]:focus {
+  border-color: var(--color-produccion);
+  box-shadow: 0 0 0 3px rgba(93, 64, 55, 0.1);
+  background-color: var(--bg-card);
 }
 
-/* ========== Resultados ========== */
-.resultados {
-  font-family: 'Segoe UI', sans-serif;
-  max-width: 300px;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  color: #3e2723;
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  margin-top: 16px;
 }
 
-.resultados h4 {
-  font-size: 1.25rem;
-  border-bottom: 2px solid #2ac931;
-  padding-bottom: 10px;
-  color: #2ac931;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.btn:active {
+  transform: scale(0.98);
 }
 
-.resultados-table {
-    border-collapse: separate;
-    border-spacing: 6px;
+.btn--primary {
+  background-color: var(--btn-primary-bg);
+  color: #ffffff;
 }
 
-
-.resultados-table th {
-    padding: 0 8px;
+.btn--primary:hover {
+  background-color: var(--btn-primary-hover);
 }
 
-.resultados-table td:nth-child(n+2) {
-    text-align: right;
-    font-size: 1rem;
-    color: #3e2723;
+/* Saved state */
+.btn--saved {
+  background-color: var(--color-resultados) !important;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header__title {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .field-group {
+    flex-direction: column;
+  }
+}
+
+/* ============================================================
+   Animations & Transitions
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    animation: fadeInUp 0.4s ease both;
+  }
+
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.10s; }
+  .card:nth-child(3) { animation-delay: 0.15s; }
+  .card:nth-child(4) { animation-delay: 0.20s; }
+  .card:nth-child(5) { animation-delay: 0.25s; }
+  .card:nth-child(6) { animation-delay: 0.30s; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

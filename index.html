@@ -1,197 +1,208 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mi plantilla</title>
+    <title>Cebada y Chicha — Calculadora de costos</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      <h1>Bienvenido(a)</h1>
-      <p>
-        <b>PRECIO COSTE:</b> coste del insumo o al menos una referencia.<br>
-        <b>CANTIDAD:</b> cantidad estimada para producir un lote.
-      </p>
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">Cebada &amp; Chicha</h1>
+        <p class="header__description">
+          <strong>Precio coste:</strong> coste del insumo o al menos una referencia.<br>
+          <strong>Cantidad:</strong> cantidad estimada para producir un lote.
+        </p>
+      </div>
+      <button id="theme-toggle" class="btn-theme" type="button" aria-label="Cambiar tema">
+        <span class="btn-theme__icon" aria-hidden="true">🌙</span>
+      </button>
     </header>
 
-    <div class="contenedor-calculadoras">
-      <div class="costes">
-        <h4 class="costes-title">Definición de costes</h4>
-        <table>
-          <tr>
-            <th>Insumos</th>
-            <th style="padding-right: 22px;">Precio</th>
-          </tr>
-          <tr>
-            <td>Azúcar <small>(1kg)</small></td>
-            <td><input id="azucar" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Cebada <small>(1kg)</small></td>
-            <td><input id="cebada" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Maíz morado <small>(1kg)</small></td>
-            <td><input id="maiz-morado" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Linaza <small>(1kg)</small></td>
-            <td><input id="linaza" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Limón <small>(ciento)</small></td>
-            <td><input id="limon" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Piña <small>(unidad)<small></td>
-            <td><input id="pineapple" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <!-- <tr>
-            <td>Canela <small>(1Kg)<small></td>
-            <td><input id="canela" class="input-costo" type="number" placeholder="0"></td>
-          </tr> -->
-          <tr>
-            <td>Leche <small>(1L)<small></td>
-            <td><input id="leche" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Fresa <small>(1Kg)<small></td>
-            <td><input id="fresa" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Lúcuma <small>(1Kg)<small></td>
-            <td><input id="lucuma" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Tamarindo <small>(1Kg)<small></td>
-            <td><input id="tamarindo" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Maracuyá <small>(1Kg)<small></td>
-            <td><input id="maracuya" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Chocolate <small>(1 tabla)<small></td>
-            <td><input id="chocolate" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Bolsitas marcianos <small>(1 paquete)<small></td>
-            <td><input id="bolsitas-marcianos" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Bolsas cebada/chicha <small>(1 paquete)<small></td>
-            <td><input id="bolsas-cebada-chicha" class="input-costo" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td><span style="letter-spacing: 1.5px; font-weight: bold;">Total</span> <small>referencia</small></td>
-            <td><input id="total" type="number" placeholder="0" disabled></td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <button id="guardar-costos">Guardar preferencias</button>
-            </td>
-          </tr>
-        </table>
-      </div>
+    <main class="calculator-grid">
 
-      <div class="cebada">
-        <h4 class="cebada-title">Cebada</h4>
-        <table>
-          <tr>
-            <th>Insumos / gas</th>
-            <th>Cantidad</th>
-          </tr>
-          <tr>
-            <td>Azúcar</td>
-            <td><input id="cebada-azucar" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Cebada</td>
-            <td><input id="cebada-cebada" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Linaza</td>
-            <td><input id="cebada-linaza" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td>Limón</td>
-            <td><input id="cebada-limon" type="number" placeholder="0"></td>
-          </tr>
-          <tr>
-            <td><b>Coste producción por lote</b></td>
-            <td><input id="cebada-total" type="number" placeholder="0" disabled></td>
-          </tr>
+      <!-- Costes -->
+      <section class="card card--costes">
+        <h2 class="card__title card__title--costes">Definición de costes</h2>
+        <table class="card__table">
+          <thead>
+            <tr>
+              <th>Insumos</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Azúcar <small>(1 kg)</small></td>
+              <td><input id="azucar" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Cebada <small>(1 kg)</small></td>
+              <td><input id="cebada" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Maíz morado <small>(1 kg)</small></td>
+              <td><input id="maiz-morado" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Linaza <small>(1 kg)</small></td>
+              <td><input id="linaza" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Limón <small>(ciento)</small></td>
+              <td><input id="limon" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Piña <small>(unidad)</small></td>
+              <td><input id="pineapple" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Leche <small>(1 L)</small></td>
+              <td><input id="leche" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Fresa <small>(1 kg)</small></td>
+              <td><input id="fresa" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Lúcuma <small>(1 kg)</small></td>
+              <td><input id="lucuma" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Tamarindo <small>(1 kg)</small></td>
+              <td><input id="tamarindo" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Maracuyá <small>(1 kg)</small></td>
+              <td><input id="maracuya" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Chocolate <small>(1 tabla)</small></td>
+              <td><input id="chocolate" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Bolsitas marcianos <small>(unidad)</small></td>
+              <td><input id="bolsitas-marcianos" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Bolsas cebada/chicha <small>(unidad)</small></td>
+              <td><input id="bolsas-cebada-chicha" class="input-costo" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr class="card__table-total">
+              <td><strong>Total</strong> <small>referencia</small></td>
+              <td><input id="total" type="number" placeholder="0" disabled></td>
+            </tr>
+          </tbody>
         </table>
-      </div>
+        <button id="guardar-costos" class="btn btn--primary" type="button">Guardar preferencias</button>
+      </section>
 
-      <div class="chicha-morada">
-        <h4 class="chicha-morada-title">Chicha morada</h4>
-        <table>
+      <!-- Cebada -->
+      <section class="card card--cebada">
+        <h2 class="card__title card__title--cebada">Cebada</h2>
+        <table class="card__table">
+          <thead>
+            <tr>
+              <th>Insumos / gas</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Azúcar</td>
+              <td><input id="cebada-azucar" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Cebada</td>
+              <td><input id="cebada-cebada" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Linaza</td>
+              <td><input id="cebada-linaza" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr>
+              <td>Limón</td>
+              <td><input id="cebada-limon" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr class="card__table-total">
+              <td><strong>Coste producción por lote</strong></td>
+              <td><input id="cebada-total" type="number" placeholder="0" disabled></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Chicha morada -->
+      <section class="card card--chicha">
+        <h2 class="card__title card__title--chicha">Chicha morada</h2>
+        <table class="card__table">
           <thead>
             <tr>
               <th>Insumo / gas</th>
               <th>Cantidad</th>
             </tr>
           </thead>
-        <tbody>
+          <tbody>
             <tr>
               <td>Azúcar</td>
-              <td><input id="chicha-morada-azucar" type="number" placeholder="0"></td>
+              <td><input id="chicha-morada-azucar" type="number" placeholder="0" step="0.01"></td>
             </tr>
             <tr>
               <td>Maíz morado</td>
-              <td><input id="chicha-morada-maiz" type="number" placeholder="0"></td>
+              <td><input id="chicha-morada-maiz" type="number" placeholder="0" step="0.01"></td>
             </tr>
             <tr>
               <td>Limón</td>
-              <td><input id="chicha-morada-limon" type="number" placeholder="0"></td>
+              <td><input id="chicha-morada-limon" type="number" placeholder="0" step="0.01"></td>
             </tr>
             <tr>
-              <td><b>Coste producción por lote</b></td>
+              <td>Piña</td>
+              <td><input id="chicha-morada-pineapple" type="number" placeholder="0" step="0.01"></td>
+            </tr>
+            <tr class="card__table-total">
+              <td><strong>Coste producción por lote</strong></td>
               <td><input id="chicha-morada-total" type="number" placeholder="0" disabled></td>
+            </tr>
           </tbody>
         </table>
-      </div>
+      </section>
 
-
-      <div class="produccion">
-        <h4>Producción</h4>
-        <p style="margin: 16px; text-align: center;">Litros producidos por lote</p>
-        <div class="grid-container">
-          <div class="control-wrapper">
-            <label>Cebada</label>
-            <input id="litros-lote-cebada" type="number" placeholder="0">
+      <!-- Producción -->
+      <section class="card card--produccion">
+        <h2 class="card__title card__title--produccion">Producción</h2>
+        <p class="card__subtitle">Litros producidos por lote</p>
+        <div class="field-group">
+          <div class="field">
+            <label for="litros-lote-cebada">Cebada</label>
+            <input id="litros-lote-cebada" type="number" placeholder="0" step="0.1">
           </div>
-
-          <div class="control-wrapper">
-            <label>Chicha morada</label>
-            <input id="litros-lote-chicha" type="number" placeholder="0">
+          <div class="field">
+            <label for="litros-lote-chicha">Chicha morada</label>
+            <input id="litros-lote-chicha" type="number" placeholder="0" step="0.1">
           </div>
         </div>
-      </div>
+      </section>
 
-      
-      <div class="ventas">
-        <h4>Precio de venta</h4>
-        
-        <div class="grid-container">
-          <div class="control-wrapper">
+      <!-- Precio de venta -->
+      <section class="card card--ventas">
+        <h2 class="card__title card__title--ventas">Precio de venta</h2>
+        <div class="field-group">
+          <div class="field">
             <label for="precio-cebada">Cebada (S/ por litro)</label>
             <input id="precio-cebada" type="number" value="4.00" step="0.10">
           </div>
-
-          <div class="control-wrapper">
+          <div class="field">
             <label for="precio-chicha">Chicha (S/ por litro)</label>
             <input id="precio-chicha" type="number" value="5.00" step="0.10">
           </div>
         </div>
-      </div>
+      </section>
 
-
-      <div class="resultados">
-        <h4>Resultados</h4>
-        <table class="resultados-table">
+      <!-- Resultados -->
+      <section class="card card--resultados">
+        <h2 class="card__title card__title--resultados">Resultados</h2>
+        <table class="card__table card__table--resultados">
           <thead>
             <tr>
               <th>Métricas</th>
@@ -202,33 +213,29 @@
           <tbody>
             <tr>
               <td>Costo por litro</td>
-              <td id="costo-litro-cebada"></td>
-              <td id="costo-litro-chicha"></td>
+              <td id="costo-litro-cebada">S/ 0.00</td>
+              <td id="costo-litro-chicha">S/ 0.00</td>
             </tr>
             <tr>
               <td>Ganancia por litro</td>
-              <td id="ingreso-litro-cebada"></td>
-              <td id="ingreso-litro-chicha"></td>
+              <td id="ingreso-litro-cebada">S/ 0.00</td>
+              <td id="ingreso-litro-chicha">S/ 0.00</td>
             </tr>
             <tr>
               <td>Ganancia por lote</td>
-              <td id="ganancia-lote-cebada"></td>
-              <td id="ganancia-lote-chicha"></td>
+              <td id="ganancia-lote-cebada">S/ 0.00</td>
+              <td id="ganancia-lote-chicha">S/ 0.00</td>
             </tr>
           </tbody>
         </table>
-      </div>
-    
-    </div>
-    
-    <footer>
+      </section>
+
+    </main>
+
+    <footer class="footer">
       <small>Derechos reservados a Luis Felipe Tello Arteaga &copy; 2026</small>
     </footer>
-    
-    <script src="costos.js" defer></script>
-    <script src="cebada.js"></script>
-    <script src="chicha-morada.js"></script>
-    <script src="resultados.js"></script>
+
+    <script src="app.js" defer></script>
   </body>
 </html>
-
