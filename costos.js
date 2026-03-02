@@ -35,7 +35,6 @@
         document.getElementById("tamarindo").value = costosGuardados.tamarindo || 0;
         document.getElementById("maracuya").value = costosGuardados.maracuya || 0;
         document.getElementById("chocolate").value = costosGuardados.chocolate || 0;
-        document.getElementById("vainilla").value = costosGuardados.vainilla || 0;
         document.getElementById("bolsitas-marcianos").value = costosGuardados.bolsitasMarcianos || 0;
         document.getElementById("bolsas-cebada-chicha").value = costosGuardados.bolsasCebadaChicha || 0;
         calcular();
@@ -59,7 +58,6 @@
             tamarindo: parseFloat(document.getElementById("tamarindo").value) || 0,
             maracuya: parseFloat(document.getElementById("maracuya").value) || 0,
             chocolate: parseFloat(document.getElementById("chocolate").value) || 0,
-            vainilla: parseFloat(document.getElementById("vainilla").value) || 0,
             bolsitasMarcianos: parseFloat(document.getElementById("bolsitas-marcianos").value) || 0,
             bolsasCebadaChicha: parseFloat(document.getElementById("bolsas-cebada-chicha").value) || 0
         };
